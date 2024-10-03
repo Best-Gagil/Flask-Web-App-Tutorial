@@ -1,48 +1,87 @@
-{% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block
-content %}
-<form method="POST">
-  <h3 align="center">Sign Up</h3>
-  <div class="form-group">
-    <label for="email">Email Address</label>
-    <input
-      type="email"
-      class="form-control"
-      id="email"
-      name="email"
-      placeholder="Enter email"
-    />
-  </div>
-  <div class="form-group">
-    <label for="firstName">First Name</label>
-    <input
-      type="text"
-      class="form-control"
-      id="firstName"
-      name="firstName"
-      placeholder="Enter first name"
-    />
-  </div>
-  <div class="form-group">
-    <label for="password1">Password</label>
-    <input
-      type="password"
-      class="form-control"
-      id="password1"
-      name="password1"
-      placeholder="Enter password"
-    />
-  </div>
-  <div class="form-group">
-    <label for="password2">Password (Confirm)</label>
-    <input
-      type="password"
-      class="form-control"
-      id="password2"
-      name="password2"
-      placeholder="Confirm password"
-    />
-  </div>
-  <br />
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+{% block navbar_css %}
+    <!-- Aquí puedes incluir el CSS específico para la navbar si es necesario -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 {% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbar"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbar">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" id="main" href="/main">Main</a>
+      {% if user.is_authenticated %}
+      <a class="nav-item nav-link" id="home" href="/">Home</a>
+      <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+      {% else %}
+      <a class="nav-item nav-link" id="login" href="/login">Login</a>
+      <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+      {% endif %}
+    </div>
+  </div>
+</nav>
+{% endblock %}
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
+</head>
+<div class="background-image">
+  <div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="signup-box p-5 shadow-lg">
+      <h3 class="text-center mb-4">Sign Up</h3>
+      <form method="POST">
+        <div class="form-group mb-3">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Enter email"
+            required
+          />
+        </div>
+        <div class="form-group mb-3">
+          <label for="firstName">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstName"
+            name="firstName"
+            placeholder="Enter first name"
+            required
+          />
+        </div>
+        <div class="form-group mb-3">
+          <label for="password1">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password1"
+            name="password1"
+            placeholder="Enter password"
+            required
+          />
+        </div>
+        <div class="form-group mb-3">
+          <label for="password2">Confirm Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password2"
+            name="password2"
+            placeholder="Confirm password"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

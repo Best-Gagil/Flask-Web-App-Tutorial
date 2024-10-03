@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -14,10 +16,11 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       crossorigin="anonymous"
     />
-
     <title>{% block title %}Home{% endblock %}</title>
-  </head>
-  <body>
+  
+</head>
+<body>
+    {% block navbar %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <button
         class="navbar-toggler"
@@ -29,6 +32,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbar">
         <div class="navbar-nav">
+          <a class="nav-item nav-link" id="main" href="/main">Main</a>
           {% if user.is_authenticated %}
           <a class="nav-item nav-link" id="home" href="/">Home</a>
           <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
@@ -39,10 +43,9 @@
         </div>
       </div>
     </nav>
+    {% endblock %}
 
-    {% with messages = get_flashed_messages(with_categories=true) %} {% if
-    messages %} {% for category, message in messages %} {% if category ==
-    'error' %}
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %} {% if category == 'error' %}
     <div class="alert alert-danger alter-dismissable fade show" role="alert">
       {{ message }}
       <button type="button" class="close" data-dismiss="alert">
@@ -75,17 +78,17 @@
       crossorigin="anonymous"
     ></script>
 
-{% block javascript %}
+    {% block javascript %}
     <script type="text/javascript">
       function deleteNote(noteId) {
-  fetch("/delete-note", {
-    method: "POST",
-    body: JSON.stringify({ noteId: noteId }),
-  }).then((_res) => {
-    window.location.href = "/";
-  });
-  }
-</script>
-{% endblock %}
-  </body>
+        fetch("/delete-note", {
+          method: "POST",
+          body: JSON.stringify({ noteId: noteId }),
+        }).then((_res) => {
+          window.location.href = "/";
+        });
+      }
+    </script>
+    {% endblock %}
+</body>
 </html>
