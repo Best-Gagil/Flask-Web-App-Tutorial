@@ -7,6 +7,10 @@ from flask_login import login_user, login_required, logout_user, current_user
 
 auth = Blueprint('auth', __name__)
 
+#Ruta para pagina INICIAL:
+@auth.route('/main', methods=['GET'])
+def main():
+    return render_template("main.html", user=current_user)
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
@@ -64,3 +68,4 @@ def sign_up():
             return redirect(url_for('views.home'))
 
     return render_template("sign_up.html", user=current_user)
+

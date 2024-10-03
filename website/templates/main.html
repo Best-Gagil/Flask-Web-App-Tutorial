@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %} G-MOV Guardián del movimiento {% endblock %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-MOV Guardián del movimiento</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Bienvenido a Nuestro Solución IoT</h1>
+    </header>
+
+    <!-- Logo Section -->
+    <div class="logo-container">
+        <img src="https://www.dafont.com/forum/attach/orig/6/8/680781.jpg" alt="Logo" class="logo">
+    </div>
+
+    <!-- Banner Section -->
+    <div class="banner">
+        <h2>G-MOV Guardián del Movimiento</h2>
+    </div>
+
+    <!-- Information Section -->
+    <main>
+        <section class="info-section">
+            <h2>Información del Proyecto</h2>
+            <p>Aquí puedes incluir detalles sobre tu proyecto, su propósito y características.</p>
+            <p>Si estás interesado en unirte o acceder a más funcionalidades, por favor inicia sesión.</p>
+
+            <h2>Métodos de acceso:</h2>
+            <div class="button-container">
+                <a href="{{ url_for('auth.login') }}" class="button"> Iniciar Sesión </a>
+                <a href="{{ url_for('auth.sign_up') }}" class="button"> Registrarse </a>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 G-MOV</p>
+    </footer>
+</body>
+{% endblock %}
+
