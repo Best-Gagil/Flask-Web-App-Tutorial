@@ -6,17 +6,42 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    padding-top: 55px;
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Cambiado a Roboto */
+    background-color: #E6F2F0;
     color: #eb770b;
 }
 
+/* Logo Background */
+.logo-background {
+    position: absolute; /* Permite que el logo esté en la parte posterior */
+    top: 0;
+    left: 0; /* Alinea a la izquierda */
+    width: 100%; /* Ancho completo */
+    height: auto; /* Altura completa */
+    z-index: 1; /* Asegura que esté detrás de otros elementos */
+}
+
+.logo {
+    width: 100%; /* Ajusta el logo para que ocupe el ancho completo */
+    height: 70%; /* Mantiene la proporción */
+    opacity: 0.7; /* Ajusta la opacidad del logo para que no opaque el contenido */
+}
+
+/* Header Styles */
 header {
     text-align: center;
-    padding: 20px;
-    background-color:#eb770b;
+    padding: 15px;
+    background-color: #eb770b; /* Color de fondo semi-transparente */
     color: white;
-    border-radius: 10px;
+    border-radius: 0; /* Cambiado a 0 para que no haya bordes redondeados */
+    width: 100%; /* Asegura que el ancho sea del 100% */
+    position: relative; /* Mantiene el header en el flujo del documento */
+    left: 0 !important; /* Asegura que comience desde el borde izquierdo */
+    right: 0 !important;
+    margin: 0; /* Elimina el margen para que ocupe todo el ancho */
+    z-index: 2; /* Asegura que el header esté encima del logo */
 }
 
 h1 {
@@ -31,22 +56,12 @@ main {
     justify-content: center;
     text-align: center;
     padding: 20px;
-}
-
-/* Logo Styles */
-.logo-container {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.logo {
-    width: 200px;
-    height: auto;
+    position: relative; /* Mantiene el main en el flujo del documento */
+    z-index: 2; /* Asegura que el main esté encima del logo */
 }
 
 /* Banner Styles */
 .banner {
-    background-image: url('/static/images/PosibleDiseño1.png'); /* Asegúrate de colocar la ruta correcta */
     background-size: cover;
     background-position: center;
     height: 500px;
@@ -54,8 +69,9 @@ main {
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-top: 20px;
+    margin-top: -500px;
     border-radius: 10px;
+    z-index: 2; /* Asegura que el banner esté encima del logo */
 }
 
 .banner h2 {
@@ -68,13 +84,14 @@ main {
 
 /* Information Section */
 .info-section {
-    margin-top: 40px;
+    margin-top: 50px;
     padding: 40px;
     background-color: #f5f5f5;
     width: 80%;
     max-width: 1200px;
     text-align: center;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 2; /* Asegura que la sección de información esté encima del logo */
 }
 
 .info-section p {
@@ -90,8 +107,11 @@ footer {
     text-align: center;
     position: relative;
     bottom: 0;
-    width: 100%;
-    margin-top: 50px;
+    width: 100%; /* Asegura que el ancho sea del 100% */
+    left: 0; /* Asegura que comience desde el borde izquierdo */
+    margin: 0; /* Elimina el margen para que ocupe todo el ancho */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra opcional para mejor estética */
+    z-index: 2; /* Asegura que el footer esté encima del logo */
 }
 
 .button-container {
