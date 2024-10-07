@@ -50,6 +50,8 @@ h1 {
 }
 
 main {
+    text-align: justify;
+    text-justify: inter-word;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -80,6 +82,8 @@ main {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
+    justify-content: center;
+    text-align: center;
 }
 
 /* Information Section */
@@ -92,6 +96,11 @@ main {
     text-align: center;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     z-index: 2; /* Asegura que la sección de información esté encima del logo */
+}
+.descripcion{
+    text-align: justify;
+    text-justify: inter-word;
+    color: #666;
 }
 
 .info-section p {
@@ -134,4 +143,153 @@ footer {
 .button:hover {
     opacity: 0.9;
     color: white; /* Color del texto */
+}
+
+.feature-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: .75rem;
+  }
+  
+  .icon-square {
+    width: 3rem;
+    height: 3rem;
+    border-radius: .75rem;
+  }
+  
+  .text-shadow-1 { text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25); }
+  .text-shadow-2 { text-shadow: 0 .25rem .5rem rgba(0, 0, 0, .25); }
+  .text-shadow-3 { text-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25); }
+  
+  .card-cover {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  
+  .feature-icon-small {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  /* General Footer Section Styles */
+.footer-section {
+    background-color: #f0f0f0; /* Color de fondo */
+    padding: 40px 40px;
+    margin-left: -150px;
+    margin-right: -150px;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 50px;
+}
+
+/* Imagen en el lado izquierdo */
+.footer-image img {
+    width: 740px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Texto en el lado derecho */
+.footer-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+.footer-text h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.footer-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #666;
+    text-align: center;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.parrafo {
+    text-align: justify; 
+    color: #666;
+}
+
+/* O aumentar la especificidad */
+h3 + .parrafo {
+    text-align: center;
+    color: #666;
+}
+
+
+.titulo-pilares {
+    font-size: 1.5rem; /* Ajusta este valor según sea necesario */
+}
+.contenedor-parrafo {
+    max-width: 600px;
+    max-height: 600px;
+    margin-bottom: 0; /* Mantiene el margen inferior como lo tenías */
+    text-overflow: ellipsis; /* Agrega puntos suspensivos si el texto es muy largo (solo funciona en línea) */
+}
+
+
+.contenedor-url{
+    margin-top: 50px;
+}
+
+.avance-imagen {
+    display: block; /* Cambia el comportamiento a bloque */
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-bottom: 20px;
+}
+
+.cuerpo-avance{
+    font-size: 1em;
+    line-height: 1.2;
+    color: #eb770b;
+    text-align: center;
+    text-justify: inter-word;
+
+}
+
+.descripcion-avance{
+    font-size: 1em;
+    line-height: 1.2;
+    color: #eb770b;
+    text-align: center;
+    text-justify: inter-word;
+}
+
+
+/* Para dispositivos móviles, hacer que se apilen verticalmente */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-image img {
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: 20px;
+    }
+
+    .footer-text {
+        text-align: center;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+
+
 }

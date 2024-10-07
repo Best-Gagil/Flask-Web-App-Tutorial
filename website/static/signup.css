@@ -1,11 +1,14 @@
 .background-image {
-  background-image: url('https://i.pinimg.com/originals/5e/28/f1/5e28f185d13dc32f1c2e5fefc8afe9ad.jpg');
+  background-image: url('https://veeonehealth.com/wp-content/uploads/2022/05/iStock-1343674662-scaled-e1653072580775.jpg');
+  position: absolute; /* Permite que el logo esté en la parte posterior */
+  top: 0;
+  left: 0; /* Alinea a la izquierda */
+  width: 100%; /* Ancho completo */
+  height: auto; /* Altura completa */
+  z-index: 1; /* Asegura que esté detrás de otros elementos */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
-  width: 100%;
-  height: 100vh;
 }
 
 .signup-box {
@@ -17,13 +20,27 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
-.vh-100 {
-  height: 100vh; /* Altura completa de la ventana */
-}
+
 
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  z-index: 100  ;
+}
+
+/* Estilo para el contenedor de los flash messages */
+.flash-container {
+  position: fixed;
+  top: 55px; /* Ajusta el valor según la altura de tu navbar */
+  width: 100%;
+  z-index: 1050; /* Asegura que los mensajes estén por encima de otros elementos */
+  display: flex;
+  justify-content: center;
+  pointer-events: none; /* Permite que los mensajes no interfieran con otros elementos */
+}
+
+.flash-container .alert {
+  max-width: 600px;
+  pointer-events: auto; /* Reactiva los eventos de puntero solo para los mensajes */
 }
