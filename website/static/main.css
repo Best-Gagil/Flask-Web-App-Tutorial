@@ -93,6 +93,10 @@ main {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     z-index: 2; /* Asegura que la sección de información esté encima del logo */
 }
+.descripcion{
+    text-align: justify;
+    text-justify: inter-word;
+}
 
 .info-section p {
     font-size: 1.2em;
